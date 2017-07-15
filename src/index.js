@@ -1,17 +1,17 @@
-﻿function areIntersected(RectangleA, RectangleB) {
-	if (RectangleA.left >= (RectangleB.width + RectangleB.left) ||
-		RectangleB.left >= (RectangleA.width + RectangleA.left) ||
-		RectangleA.top >= (RectangleB.top + RectangleB.height) ||
-		RectangleB.top >= (RectangleA.top + RectangleA.height)
+﻿function areIntersected(rectangleA, rectangleB) {
+	if (rectangleA.left >= (rectangleB.width + rectangleB.left) ||
+		rectangleB.left >= (rectangleA.width + rectangleA.left) ||
+		rectangleA.top >= (rectangleB.top + rectangleB.height) ||
+		rectangleB.top >= (rectangleA.top + rectangleA.height)
 	)
 		return false;
 	return true;
 }
 
-function filterVisible(RectangleA, array) {
-	return array.filter(function (func) {
-		if (func.width !== 0 && func.height !== 0)
-			return areIntersected(RectangleA, func);
+function filterVisible(rectangleA, array) {
+	return array.filter(function (angle) {
+		if (angle.width !== 0 && angle.height !== 0)
+			return areIntersected(rectangleA, angle);
 		return false;
 	});
 }
